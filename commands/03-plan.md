@@ -1,3 +1,28 @@
-# 03 — Plan delivery (read-only)
+# 03 — Plan delivery
 
-Follow `.agents/tech-lead.md`, and read the approved requirements/architecture. Split the work into small independently verifiable steps. For each step list files likely to change, acceptance criteria, tests, dependencies, risks, and approval gates. Include a rollback plan for risky changes. Do not implement yet. Ask me to approve the first step.
+> **Mode:** read-only · **Role:** Tech Lead · **Next:** `04-implement.md`
+
+Act as the Tech Lead (`.agents/tech-lead.md`). Follow `AGENTS.md`.
+
+## Steps
+1. Read the approved `docs/requirements.md`, `docs/architecture.md`, relevant ADRs, and `docs/testing-strategy.md`.
+2. Split the work into small, independently verifiable steps. Each step should leave the project buildable and testable.
+3. Order the steps by dependency and risk, tackling the riskiest unknowns early.
+
+## For each step, list
+| Field | Content |
+|-------|---------|
+| ID and title | `STEP-01: …` |
+| Goal | What the step delivers, and which `AC-` items it covers |
+| Files likely to change | Paths, or areas |
+| Tests | What will be added or run to verify it |
+| Dependencies | Prior steps, and any approvals needed (dependencies, schema, infrastructure) |
+| Risks and rollback | What could go wrong, and how to undo it |
+| Size | S / M / L |
+
+## Constraints
+- Do not implement anything yet.
+- Call out every approval gate from `AGENTS.md` section 4 that a step triggers.
+
+## Output
+The plan table, then any open questions. **End by asking me to approve the first step.**

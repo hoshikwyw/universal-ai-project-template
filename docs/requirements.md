@@ -1,26 +1,48 @@
 # Requirements
 
+> **Status:** Draft · **Last updated:** YYYY-MM-DD · **Owner:** TODO
+
+<!--
+- IDs are stable: never reuse or renumber them. Mark dropped items "Won't" instead of deleting them.
+- Priority: Must / Should / Could / Won't (this time).
+- Every Must requirement needs at least one acceptance criterion; every acceptance criterion should map to a test.
+- Prefer measurable statements ("p95 < 300 ms") over vague ones ("fast").
+-->
+
 ## Product goal
-TODO
+TODO: one or two sentences on the outcome, and how success is measured.
 
 ## Users and primary journeys
-TODO
+| User / persona | Goal | Primary journey |
+|----------------|------|-----------------|
+| TODO | TODO | TODO |
 
 ## Functional requirements
-- REQ-001: TODO
+| ID | Requirement | Priority | Notes |
+|----|-------------|----------|-------|
+| REQ-001 | The system shall TODO | Must | |
 
 ## Nonfunctional requirements
-- Reliability: TODO
-- Performance: TODO
-- Accessibility: TODO
-- Security/privacy: TODO
-- Supported environments: TODO
+| ID | Category | Requirement / target | How verified |
+|----|----------|----------------------|--------------|
+| NFR-001 | Performance | TODO | TODO |
+| NFR-002 | Reliability / availability | TODO | TODO |
+| NFR-003 | Accessibility | TODO (for example WCAG 2.2 AA) | TODO |
+| NFR-004 | Security / privacy | TODO | TODO |
+| NFR-005 | Supported environments | TODO | TODO |
 
 ## Acceptance criteria
-- AC-001 (maps to REQ-001): Given TODO, when TODO, then TODO.
+| ID | Requirement | Given | When | Then |
+|----|-------------|-------|------|------|
+| AC-001 | REQ-001 | TODO | TODO | TODO |
 
 ## Out of scope
-TODO
+- TODO
+
+## Assumptions and dependencies
+- TODO
 
 ## Open questions
-TODO
+| # | Question | Owner | Status |
+|---|----------|-------|--------|
+| 1 | TODO | TODO | Open |

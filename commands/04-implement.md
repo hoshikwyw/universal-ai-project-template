@@ -1,3 +1,24 @@
 # 04 — Implement one approved step
 
-Follow `.agents/tech-lead.md`. Implement ONLY the explicitly approved step from the delivery plan. Inspect existing code first and preserve unrelated changes. Use existing conventions and dependencies. Add focused tests where appropriate. Do not deploy, migrate schemas, install dependencies, or delete files without separate approval. Run available targeted checks and report exact commands, results, changed files, and remaining work. Stop after this step.
+> **Mode:** writes code (approved scope only) · **Role:** Tech Lead · **Next:** `05-qa.md`
+
+Act as the Tech Lead (`.agents/tech-lead.md`). Follow `AGENTS.md`.
+
+## Input
+Approved step: `<STEP-ID and title from the delivery plan>`
+
+## Steps
+1. Check working-tree status, and preserve any uncommitted changes that are not yours.
+2. Inspect the existing code in the affected area before editing.
+3. Implement **only** the approved step, using existing conventions and dependencies.
+4. Add or update focused tests for the new behavior.
+5. Run the available targeted checks (tests, lint, type-check, build).
+6. Self-review the diff using the Tech Lead review checklist.
+
+## Constraints
+- Do not deploy, migrate schemas, install or upgrade dependencies, delete files, or touch secrets without separate approval.
+- If the step turns out larger or different than planned, stop and report back instead of expanding scope.
+- Do not commit or push unless asked.
+
+## Output
+Use the task report format from `AGENTS.md` section 7: summary, assumptions, changed files, verification (commands and results), risks, and next steps. **Stop after this step.**
