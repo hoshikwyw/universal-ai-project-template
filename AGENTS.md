@@ -83,3 +83,5 @@ End every task with a concise report:
 
 ## 8. Suggested workflow
 Use the prompts in `commands/`, from `00-discover.md` through `07-release-check.md`. They are copy-paste prompts (or "follow `commands/0X-….md`" instructions), not executable scripts. Repeat steps 01–07 for each feature. Small, low-risk changes may go straight from 03 to 05.
+
+Outside the sequence, use `commands/bugfix.md` for defects and `commands/code-review.md` to review a diff, branch, or PR.

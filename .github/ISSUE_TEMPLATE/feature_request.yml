@@ -1,0 +1,50 @@
+name: Feature request
+description: Propose a new capability or an improvement.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / user need
+      description: Who needs this, and what problem does it solve? Focus on the need, not the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: What should be possible afterward? How will we know it worked?
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Proposed priority
+      options:
+        - Must
+        - Should
+        - Could
+        - Won't (this time)
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Testable criteria, ideally in Given / When / Then form.
+      placeholder: |
+        - Given ..., when ..., then ...
+  - type: textarea
+    id: scope
+    attributes:
+      label: Out of scope
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Mockups, links, constraints. Use synthetic data only.

@@ -18,7 +18,7 @@ A technology-neutral **governance and workflow template** for building software 
 │   ├── qa-engineer.md
 │   ├── security-engineer.md
 │   └── devops-engineer.md
-├── commands/                  # Ordered copy-paste prompts, 00 → 07
+├── commands/                  # Ordered prompts 00 → 07, plus bugfix.md and code-review.md
 ├── docs/                      # Per-project source of truth (fill these in)
 │   ├── project-context.md
 │   ├── requirements.md
@@ -26,7 +26,10 @@ A technology-neutral **governance and workflow template** for building software 
 │   ├── testing-strategy.md
 │   ├── security.md
 │   └── decisions/             # Architecture Decision Records (ADRs)
+├── .github/                   # PR template and issue forms (bug, feature)
 ├── src/  tests/  scripts/     # Optional placeholders: replace or delete
+├── .editorconfig              # Consistent charset, line endings, indentation
+├── .gitattributes             # Normalizes line endings to LF across OSes
 └── .gitignore                 # Common ignores; extend for your stack
 ```
 
@@ -39,8 +42,9 @@ A technology-neutral **governance and workflow template** for building software 
 6. Once you have chosen a stack, have the Tech Lead propose stack-appropriate folders, manifests, tests, and CI. Delete the placeholder `src/`, `tests/`, or `scripts/` folders if the project uses a different layout (`app/`, `packages/`, `cmd/`, …).
 
 ## Adopting into an existing repository
-- Copy only `AGENTS.md`, `.agents/`, `commands/`, and `docs/`. Skip the placeholder folders.
-- If the repo already has an `AGENTS.md` or `.gitignore`, **merge** this template's content in rather than overwriting.
+- Copy `AGENTS.md`, `.agents/`, `commands/`, and `docs/`. Skip the placeholder folders. Optionally copy `.github/`, `.editorconfig`, and `.gitattributes`.
+- If the repo already has an `AGENTS.md`, `.gitignore`, `.editorconfig`, `.gitattributes`, or `.github/` templates, **merge** this template's content in rather than overwriting.
+- After adding `.gitattributes` to a repo with existing files, run `git add --renormalize .` once, and commit the result separately so the line-ending changes don't clutter feature diffs.
 - Run `00-discover` first. It reports the real stack and any conflicts between the docs and the code, and helps you fill in `docs/` from what already exists.
 
 ## Workflow
@@ -57,6 +61,12 @@ A technology-neutral **governance and workflow template** for building software 
 
 Repeat steps 1–7 for each feature. Small, low-risk changes can go 3 → 4 → 5. Approve the output of each step before moving on.
 
+**Ad-hoc prompts** (use at any time, outside the sequence):
+| Prompt | Use for | Output |
+|--------|---------|--------|
+| `bugfix.md` | Reproduce a bug, add a failing regression test, apply a minimal fix | Root cause, fix, and test evidence |
+| `code-review.md` | Review an uncommitted diff, branch, or PR (read-only) | Findings table and `Approve` / `Request changes` / `Comment` |
+
 ## Core principles
 - **Evidence over claims:** nothing counts as "passing" unless it was actually run. Anything else is labeled `NOT RUN`.
 - **Approval gates:** dependencies, schemas, deletions, deployments, and secrets always need explicit approval.
@@ -70,13 +80,13 @@ The full rules, status vocabulary, and definition of done are in [`AGENTS.md`](A
 | Assistant | Setup |
 |-----------|-------|
 | Tools that read `AGENTS.md` natively (for example OpenAI Codex, Cursor, GitHub Copilot) | Works as is. Check your tool's docs for its current behavior. |
-| Claude Code | Create a `CLAUDE.md` in the repo root containing the line `@AGENTS.md` (an import), plus any Claude-specific notes. Role files can optionally be adapted into `.claude/agents/` subagents. |
+| Claude Code | Current versions load `AGENTS.md` as project instructions. If yours does not, or you want Claude-specific notes, add a `CLAUDE.md` containing the line `@AGENTS.md` (an import). Role files can optionally be adapted into `.claude/agents/` subagents. |
 | Other assistants | Point the tool's native instruction or rules file at `AGENTS.md`, or copy its content in. |
 
 Plain Markdown files do not create autonomous delegation by themselves. Roles take effect only when the assistant is told to apply them, which the `commands/` prompts do.
 
 ## Reusing and updating the template
-- **Template-owned** (safe to sync from your canonical copy): `AGENTS.md`, `.agents/`, `commands/`.
+- **Template-owned** (safe to sync from your canonical copy): `AGENTS.md`, `.agents/`, `commands/`, `.github/` templates.
 - **Project-owned** (never overwrite during updates): everything in `docs/`.
 - Keep one canonical copy of this template under version control. Review diffs before syncing changes into a project.
 - If your assistant cannot read folders outside the repository, keep the role files inside the repository.

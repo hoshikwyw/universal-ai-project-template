@@ -1,0 +1,69 @@
+name: Bug report
+description: Report something that is broken or behaves incorrectly.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. **Do not report security vulnerabilities here.** Follow the contact process in `docs/security.md` instead.
+        Never paste secrets, tokens, or real personal data. Redact logs and screenshots.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is wrong, in one or two sentences?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. See error ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: See the severity definitions in AGENTS.md.
+      options:
+        - Critical (data loss, security breach, or core flow unusable with no workaround)
+        - High (major function broken; workaround impractical)
+        - Medium (limited impact, or a reasonable workaround exists)
+        - Low (minor or cosmetic)
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Version or commit, OS, browser or device, environment (local, staging, production).
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs, screenshots, or other evidence
+      description: Redact sensitive data before pasting.
+      render: shell
+  - type: input
+    id: related
+    attributes:
+      label: Related requirement or acceptance criterion
+      placeholder: REQ-001 / AC-001
