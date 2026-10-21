@@ -1,8 +1,8 @@
 # 04 — Implement one approved step
 
-> **Mode:** writes code (approved scope only) · **Role:** Tech Lead · **Next:** `05-qa.md`
+> **Mode:** writes code (approved scope only) · **Role:** Tech Lead, plus the engineering role(s) the step needs · **Next:** `05-qa.md`
 
-Act as the Tech Lead (`.agents/tech-lead.md`). Follow `AGENTS.md`.
+Act as the Tech Lead (`.agents/tech-lead.md`). Also apply the engineering role(s) named in the plan for this step: `.agents/frontend-engineer.md`, `.agents/backend-engineer.md`, `.agents/database-engineer.md`, and/or `.agents/devops-engineer.md`. Follow `AGENTS.md`.
 
 ## Input
 Approved step: `<STEP-ID and title from the delivery plan>`

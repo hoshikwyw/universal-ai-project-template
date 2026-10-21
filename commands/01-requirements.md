@@ -1,8 +1,8 @@
 # 01 — Clarify requirements
 
-> **Mode:** read-only until approved · **Role:** Tech Lead, with Software Architect input · **Next:** `02-architecture.md`
+> **Mode:** read-only until approved · **Role:** Project Manager and Tech Lead, with Software Architect input · **Next:** `02-architecture.md`
 
-Act as the Tech Lead (`.agents/tech-lead.md`), with input from the Software Architect (`.agents/software-architect.md`). Follow `AGENTS.md`.
+Act as the Project Manager (`.agents/project-manager.md`) together with the Tech Lead (`.agents/tech-lead.md`), with input from the Software Architect (`.agents/software-architect.md`). Follow `AGENTS.md`.
 
 ## Input
 <!-- Describe the project or feature here, or reference an issue or document. -->

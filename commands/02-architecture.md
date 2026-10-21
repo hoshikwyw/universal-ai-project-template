@@ -2,7 +2,7 @@
 
 > **Mode:** read-only until approved · **Role:** Software Architect · **Next:** `03-plan.md`
 
-Act as the Software Architect (`.agents/software-architect.md`). Follow `AGENTS.md`.
+Act as the Software Architect (`.agents/software-architect.md`). Follow `AGENTS.md`. Consult `.agents/database-engineer.md` for data modeling and storage decisions, and `.agents/devops-engineer.md` for hosting, environment, and deployment decisions.
 
 ## Steps
 1. Read `docs/project-context.md`, the approved `docs/requirements.md`, `docs/architecture.md`, `docs/security.md`, and existing ADRs in `docs/decisions/`.

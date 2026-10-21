@@ -17,10 +17,17 @@ Before planning or changing anything:
 ## 2. Roles
 | Role | File | Use for |
 |------|------|---------|
+| Project Manager | `.agents/project-manager.md` | Goals, scope, priorities, risks, status |
 | Software Architect | `.agents/software-architect.md` | System design, boundaries, technology choices, ADRs |
 | Tech Lead | `.agents/tech-lead.md` | Planning, implementation, code review, delivery |
+| Frontend Engineer | `.agents/frontend-engineer.md` | UI, client state, accessibility, client performance |
+| Backend Engineer | `.agents/backend-engineer.md` | APIs, business logic, integrations, server reliability |
+| Database Engineer | `.agents/database-engineer.md` | Data models, migrations, queries, data protection |
 | QA Engineer | `.agents/qa-engineer.md` | Test strategy, test design, verification, release evidence |
 | Security Engineer | `.agents/security-engineer.md` | Threat modeling, secure design and code review |
+| DevOps Engineer | `.agents/devops-engineer.md` | CI/CD, environments, infrastructure, release, observability |
+
+Load only the roles a task needs. Engineering roles (Frontend, Backend, Database, DevOps) work within the Tech Lead's plan and the Architect's design.
 
 ## 3. Working agreement
 - **Work incrementally.** For nontrivial changes, propose a plan and wait for approval before implementing. A change is nontrivial if it spans several modules, changes behavior users can see, or touches public APIs, data models, security controls, dependencies, or build/CI.

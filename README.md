@@ -9,10 +9,15 @@ A technology-neutral **governance and workflow template** for building software 
 .
 ├── AGENTS.md                  # Entry point: rules every AI assistant follows
 ├── .agents/                   # Role instructions (Markdown, not autonomous agents)
+│   ├── project-manager.md
 │   ├── software-architect.md
 │   ├── tech-lead.md
+│   ├── frontend-engineer.md
+│   ├── backend-engineer.md
+│   ├── database-engineer.md
 │   ├── qa-engineer.md
-│   └── security-engineer.md
+│   ├── security-engineer.md
+│   └── devops-engineer.md
 ├── commands/                  # Ordered copy-paste prompts, 00 → 07
 ├── docs/                      # Per-project source of truth (fill these in)
 │   ├── project-context.md
@@ -42,13 +47,13 @@ A technology-neutral **governance and workflow template** for building software 
 | Step | Prompt | Lead role | Writes files? | Output |
 |------|--------|-----------|---------------|--------|
 | 0 | `00-discover.md` | Tech Lead + Architect | No | Stack report, discrepancies, open questions |
-| 1 | `01-requirements.md` | Tech Lead + Architect | After approval | Prioritized `REQ-`/`AC-` items |
-| 2 | `02-architecture.md` | Architect | After approval | Options, recommendation, ADRs |
-| 3 | `03-plan.md` | Tech Lead | No | Small, verifiable delivery steps |
-| 4 | `04-implement.md` | Tech Lead | Yes (one approved step) | Diff and verification evidence |
+| 1 | `01-requirements.md` | Project Manager + Tech Lead | After approval | Prioritized `REQ-`/`AC-` items |
+| 2 | `02-architecture.md` | Architect (+ Database, DevOps as relevant) | After approval | Options, recommendation, ADRs |
+| 3 | `03-plan.md` | Tech Lead + Project Manager | No | Small, verifiable delivery steps |
+| 4 | `04-implement.md` | Tech Lead + Frontend / Backend / Database / DevOps | Yes (one approved step) | Diff and verification evidence |
 | 5 | `05-qa.md` | QA Engineer | Tests only, if authorized | Test matrix and verdict |
 | 6 | `06-security.md` | Security Engineer | No (unless approved) | Ranked findings and remediation |
-| 7 | `07-release-check.md` | Tech Lead + QA + Security | No | `READY` / `NOT READY` / `NEEDS VERIFICATION` |
+| 7 | `07-release-check.md` | Tech Lead + QA + Security + DevOps | No | `READY` / `NOT READY` / `NEEDS VERIFICATION` |
 
 Repeat steps 1–7 for each feature. Small, low-risk changes can go 3 → 4 → 5. Approve the output of each step before moving on.
 

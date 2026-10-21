@@ -1,8 +1,8 @@
 # 07 — Release readiness
 
-> **Mode:** read-only · **Role:** Tech Lead, consulting QA Engineer and Security Engineer · **Next:** release (by a human), or back to `04-implement.md`
+> **Mode:** read-only · **Role:** Tech Lead, consulting QA, Security, and DevOps Engineers · **Next:** release (by a human), or back to `04-implement.md`
 
-Act as the Tech Lead (`.agents/tech-lead.md`), applying `.agents/qa-engineer.md` and `.agents/security-engineer.md`. Follow `AGENTS.md`.
+Act as the Tech Lead (`.agents/tech-lead.md`), applying `.agents/qa-engineer.md`, `.agents/security-engineer.md`, and `.agents/devops-engineer.md` (for deployment and rollback readiness). Follow `AGENTS.md`.
 
 ## Input
 Release candidate: `<version, tag, branch, or list of steps included>`
