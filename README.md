@@ -8,6 +8,7 @@ A technology-neutral **governance and workflow template** for building software 
 ```text
 .
 ├── AGENTS.md                  # Entry point: rules every AI assistant follows
+├── GUIDE.md                   # Step-by-step prompt runbook, with stack playbooks
 ├── .agents/                   # Role instructions (Markdown, not autonomous agents)
 │   ├── project-manager.md
 │   ├── software-architect.md
@@ -38,11 +39,11 @@ A technology-neutral **governance and workflow template** for building software 
 2. Fill in `docs/project-context.md` and `docs/requirements.md`. Write `UNKNOWN` for anything undecided; never guess.
 3. Connect your assistant to `AGENTS.md` (see [Tool compatibility](#tool-compatibility)).
 4. Send `commands/00-discover.md` as your first prompt: paste it, or ask the assistant to "follow `commands/00-discover.md`".
-5. Continue through the [workflow](#workflow), reviewing and approving each plan before any code changes.
+5. Continue through the [workflow](#workflow), reviewing and approving each plan before any code changes. [`GUIDE.md`](GUIDE.md) walks through each step, shows how to word approvals, and has playbooks per tech stack.
 6. Once you have chosen a stack, have the Tech Lead propose stack-appropriate folders, manifests, tests, and CI. Delete the placeholder `src/`, `tests/`, or `scripts/` folders if the project uses a different layout (`app/`, `packages/`, `cmd/`, …).
 
 ## Adopting into an existing repository
-- Copy `AGENTS.md`, `.agents/`, `commands/`, and `docs/`. Skip the placeholder folders. Optionally copy `.github/`, `.editorconfig`, and `.gitattributes`.
+- Copy `AGENTS.md`, `GUIDE.md`, `.agents/`, `commands/`, and `docs/`. Skip the placeholder folders. Optionally copy `.github/`, `.editorconfig`, and `.gitattributes`.
 - If the repo already has an `AGENTS.md`, `.gitignore`, `.editorconfig`, `.gitattributes`, or `.github/` templates, **merge** this template's content in rather than overwriting.
 - After adding `.gitattributes` to a repo with existing files, run `git add --renormalize .` once, and commit the result separately so the line-ending changes don't clutter feature diffs.
 - Run `00-discover` first. It reports the real stack and any conflicts between the docs and the code, and helps you fill in `docs/` from what already exists.
@@ -89,7 +90,7 @@ The full rules, status vocabulary, and definition of done are in [`AGENTS.md`](A
 Plain Markdown files do not create autonomous delegation by themselves. Roles take effect only when the assistant is told to apply them, which the `commands/` prompts do.
 
 ## Reusing and updating the template
-- **Template-owned** (safe to sync from your canonical copy): `AGENTS.md`, `.agents/`, `commands/`, `.github/` templates.
+- **Template-owned** (safe to sync from your canonical copy): `AGENTS.md`, `GUIDE.md`, `.agents/`, `commands/`, `.github/` templates.
 - **Project-owned** (never overwrite during updates): everything in `docs/`.
 - Keep one canonical copy of this template under version control. Review diffs before syncing changes into a project.
 - If your assistant cannot read folders outside the repository, keep the role files inside the repository.
