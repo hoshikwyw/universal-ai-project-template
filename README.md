@@ -50,16 +50,19 @@ A technology-neutral **governance and workflow template** for building software 
 ## Workflow
 | Step | Prompt | Lead role | Writes files? | Output |
 |------|--------|-----------|---------------|--------|
-| 0 | `00-discover.md` | Tech Lead + Architect | No | Stack report, discrepancies, open questions |
-| 1 | `01-requirements.md` | Project Manager + Tech Lead | After approval | Prioritized `REQ-`/`AC-` items |
-| 2 | `02-architecture.md` | Architect (+ Database, DevOps as relevant) | After approval | Options, recommendation, ADRs |
-| 3 | `03-plan.md` | Tech Lead + Project Manager | No | Small, verifiable delivery steps |
-| 4 | `04-implement.md` | Tech Lead + Frontend / Backend / Database / DevOps | Yes (one approved step) | Diff and verification evidence |
+| 0 | `00-discover.md` | Tech Lead + Architect | Docs only, after approval | Stack report, discrepancies, draft `project-context.md` |
+| 1 | `01-requirements.md` | Project Manager + Tech Lead | `requirements.md`, after approval | Prioritized `REQ-` / `AC-` / `NFR-` items |
+| 2 | `02-architecture.md` | Architect (+ Database, DevOps, Security, QA as relevant) | Docs and ADRs, after approval | Options, recommendation, ADRs, security and testing doc updates |
+| 3 | `03-plan.md` | Tech Lead + Project Manager | No | Self-contained `STEP-` rows with approvals and reviews |
+| 4 | `04-implement.md` | Tech Lead + Frontend / Backend / Database / DevOps | Yes (one approved step) | Diff, verification evidence, definition-of-done status |
 | 5 | `05-qa.md` | QA Engineer | Tests only, if authorized | Test matrix and verdict |
-| 6 | `06-security.md` | Security Engineer | No (unless approved) | Ranked findings and remediation |
-| 7 | `07-release-check.md` | Tech Lead + QA + Security + DevOps | No | `READY` / `NOT READY` / `NEEDS VERIFICATION` |
+| 6 | `06-security.md` | Security Engineer | `security.md` only, after approval | Ranked findings and remediation |
+| 7 | `07-release-check.md` | Tech Lead + PM + QA + Security + DevOps | No | `READY` / `NOT READY` / `NEEDS VERIFICATION` for an exact commit |
 
-Repeat steps 1–7 for each feature. Small, low-risk changes can go 3 → 4 → 5. Approve the output of each step before moving on.
+Repeat steps 1–7 for each feature. Approve the output of each step before moving on. Shortcuts:
+- Skip step 2 when step 1 finds that no design decisions are needed.
+- Run step 6 only when a change touches authentication, authorization, user input, sensitive data, dependencies, or CI/CD. Step 5 tells you when.
+- Approved docs are marked `Status: Approved` in their header. Later steps check this before relying on them.
 
 **Ad-hoc prompts** (use at any time, outside the sequence):
 | Prompt | Use for | Output |

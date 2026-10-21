@@ -1,6 +1,6 @@
 # Testing Strategy
 
-> **Status:** Draft · **Last updated:** YYYY-MM-DD · **Owner:** TODO
+> **Status:** Draft <!-- Draft | Approved --> · **Last updated:** YYYY-MM-DD · **Owner:** TODO
 
 <!--
 Record what actually exists. If a level has no tooling yet, write "unavailable" rather than a guess.

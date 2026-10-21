@@ -1,6 +1,6 @@
 # Project Context
 
-> **Status:** Draft · **Last updated:** YYYY-MM-DD · **Owner:** TODO
+> **Status:** Draft <!-- Draft | Approved --> · **Last updated:** YYYY-MM-DD · **Owner:** TODO
 
 <!--
 Fill this in per project. It is the first file AI assistants read.

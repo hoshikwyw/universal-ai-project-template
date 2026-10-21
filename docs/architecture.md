@@ -1,6 +1,6 @@
 # Architecture
 
-> **Status:** Draft · **Last updated:** YYYY-MM-DD · **Owner:** TODO
+> **Status:** Draft <!-- Draft | Approved --> · **Last updated:** YYYY-MM-DD · **Owner:** TODO
 
 <!--
 Describe the system as it is now, plus any approved near-term changes. Record *why* in ADRs (docs/decisions/).

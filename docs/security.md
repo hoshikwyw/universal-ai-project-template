@@ -1,6 +1,6 @@
 # Security Context
 
-> **Status:** Draft · **Last updated:** YYYY-MM-DD · **Owner:** TODO
+> **Status:** Draft <!-- Draft | Approved --> · **Last updated:** YYYY-MM-DD · **Owner:** TODO
 
 <!--
 Never paste secret values, tokens, connection strings, or real personal data into this file.

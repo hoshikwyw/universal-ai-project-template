@@ -1,6 +1,6 @@
 # Requirements
 
-> **Status:** Draft · **Last updated:** YYYY-MM-DD · **Owner:** TODO
+> **Status:** Draft <!-- Draft | Approved --> · **Last updated:** YYYY-MM-DD · **Owner:** TODO
 
 <!--
 - IDs are stable: never reuse or renumber them. Mark dropped items "Won't" instead of deleting them.
